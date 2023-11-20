@@ -63,6 +63,10 @@ segment Lexer::processOther(){
         currentInd++;
     }
 
+    if(filestring[currentInd] == '\n'){
+        linenum++;
+    }
+
     if(knownWords[accum] != NULL){
         seg.value = "";
         seg.type = knownWords[accum];
@@ -83,7 +87,6 @@ segment Lexer::processOther(){
  */
 vector<segment> Lexer::lex() {
     vector<segment> segList;
-    int lineNum = 1; //todo fix this
 
     while(currentInd < filestring.length() && filestring[currentInd] != '\0'){
         segment currentSeg;
@@ -91,41 +94,41 @@ vector<segment> Lexer::lex() {
             case '{':
                 currentSeg.value ="";
                 currentSeg.type = LBRACE;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case '}':
                 currentSeg.value ="";
                 currentSeg.type = RBRACE;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case '[':
                 currentSeg.value ="";
                 currentSeg.type = LBRACKET;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case ']':
                 currentSeg.value ="";
                 currentSeg.type = RBRACKET;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case ',':
                 currentSeg.value ="";
                 currentSeg.type = COMMA;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case ':':
                 currentSeg.value ="";
                 currentSeg.type = COLON;
-                currentSeg.linenum = lineNum;
+                currentSeg.linenum = linenum;
                 currentInd++;
                 break;
             case '\n':
-                lineNum++;
+                linenum++;
                 currentInd++;
                 continue;
             case ' ':
@@ -142,7 +145,3 @@ vector<segment> Lexer::lex() {
     }
     return segList;
 }
-
-
-
-

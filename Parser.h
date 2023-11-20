@@ -1,0 +1,11 @@
+
+#ifndef CPPJSONPARSER_PARSER_H
+#define CPPJSONPARSER_PARSER_H
+
+
+class Parser {
+
+};
+
+
+#endif CPPJSONPARSER_PARSER_H

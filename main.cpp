@@ -9,5 +9,4 @@ using namespace std;
 int main() {
     Lexer lex("../testfile.json");
     lex.seglist;
-
 }

@@ -5,9 +5,6 @@ using namespace std;
 #ifndef CPPJSONPARSER_LEXER_H
 #define CPPJSONPARSER_LEXER_H
 
-
-
-
 enum segmentType{LBRACE, RBRACE, LBRACKET, RBRACKET, LITERAL, COMMA, COLON, TRUE, FALSE, NULLKEYWORD, NUMBER,};
 
 struct segment{

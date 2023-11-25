@@ -58,14 +58,18 @@ segment Lexer::processOther(){
     while(filestring[currentInd] != ','
           && filestring[currentInd] != ' '
           && filestring[currentInd] != '\n'
-          && filestring[currentInd] != '\0'){
+          && filestring[currentInd] != '\0'
+          && filestring[currentInd] != '['
+          && filestring[currentInd] != ']'
+          && filestring[currentInd] != '{'
+          && filestring[currentInd] != '}'){
         accum += filestring[currentInd];
         currentInd++;
     }
 
-    if(filestring[currentInd] == '\n'){
-        linenum++;
-    }
+//    if(filestring[currentInd] == '\n'){
+//        linenum++;
+//    }
 
     if(knownWords[accum] != NULL){
         seg.value = "";

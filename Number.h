@@ -3,12 +3,15 @@
 #define CPPJSONPARSER_NUMBER_H
 
 
-class Number {
+class Number : public Value{
 public:
-    float value;
-    Number(float n){
+    double value;
+    Number(double n){
         value = n;
     }
+    string getType() override {
+        return "number";
+    };
 };
 
 

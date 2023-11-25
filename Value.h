@@ -6,6 +6,10 @@ using namespace std;
 
 
 class Value {
+public:
+    virtual string getType(){
+        return "value";
+    }
 };
 
 

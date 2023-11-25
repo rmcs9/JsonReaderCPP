@@ -1,6 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include "Lexer.h"
+#include "Parser.h"
 
 using namespace std;
 
@@ -8,5 +9,9 @@ using namespace std;
 
 int main() {
     Lexer lex("../testfile.json");
-    lex.seglist;
+
+    Parser parse(lex.seglist);
+    parse.parse();
+
+    cout << parse.json->getType();
 }

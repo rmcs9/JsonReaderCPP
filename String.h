@@ -9,6 +9,9 @@ public:
     String(string s){
         value = s;
     }
+    string getType() override {
+        return "string";
+    };
 };
 
 

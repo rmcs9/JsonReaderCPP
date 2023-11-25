@@ -1,26 +1,26 @@
 #include "Value.h"
+#include "Lexer.h"
 #ifndef CPPJSONPARSER_KEYWORD_H
 #define CPPJSONPARSER_KEYWORD_H
 
-enum valType {
-    TRUE, FALSE, NULLVAL
-};
 
 class Keyword : public Value {
 public:
-    valType type;
-    Keyword(string s){
-        if(s.compare("true")){
-            type = TRUE;
+     segmentType type;
+    Keyword(segmentType s){
+        type = s;
+    }
+    string getType() override {
+        if(type == TRUE){
+            return "true";
         }
-        else if(s.compare("false")){
-            type = FALSE;
+        else if(type == FALSE){
+            return "false";
         }
         else{
-            type = NULLVAL;
+            return "null";
         }
-    }
+    };
 };
-
 
 #endif //CPPJSONPARSER_KEYWORD_H

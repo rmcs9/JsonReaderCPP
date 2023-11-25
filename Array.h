@@ -7,7 +7,10 @@
 
 class Array : public Value{
 public:
-    vector<Value> arrayContents;
+    vector<unique_ptr<Value>> arrayContents;
+    string getType() override {
+        return "array";
+    };
 };
 
 

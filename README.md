@@ -1,7 +1,8 @@
 # C++ JSON reader 
 
 Quick project I threw together to strengthen my grasp
-on C++ as a whole, but more specifically, its polymorphism and inheritance 
+on C++ as a whole, but more specifically, its polymorphism and inheritance.
+reference link for the JSON standard can be found [here](https://www.json.org/json-en.html).
 
 
 ## Components
